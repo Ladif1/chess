@@ -27,7 +27,7 @@ jobs:
         working-directory: ./chess-back
         run: |
           npm ci
-          npm generate
+          npm run generate
 
       - name: Lint
         working-directory: ./chess-back
