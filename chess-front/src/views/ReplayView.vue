@@ -137,13 +137,13 @@ const nextStep = () => {
         j: step.toJ
       });
 
-      
-      if(step.pieceKilled.color === Color.BLACK){
+
+      if (step.pieceKilled.color === Color.BLACK) {
         blackKilledPieces.value.push(step.pieceKilled.pieceType)
-      }else{
+      } else {
         whiteKilledPieces.value.push(step.pieceKilled.pieceType);
       }
-      
+
     }
 
     const movingPiece = currentBoard.value[step.i][step.j].piece;
@@ -156,13 +156,15 @@ const nextStep = () => {
       };
       currentBoard.value[step.i][step.j].piece = undefined;
 
-      if(step.piece){
-        currentBoard.value[step.toI][step.toJ].piece.pieceType = step.piece;
+      if (step.piece) {
+        const piece = currentBoard.value[step.toI][step.toJ].piece;
+        if (piece)
+          piece.pieceType = step.piece;
       }
 
     }
 
-    
+
   }
 };
 
@@ -204,12 +206,14 @@ const previousStep = () => {
         currentBoard.value[step.toI][step.toJ].piece = undefined;
       }
 
-      if(step.piece){
-        currentBoard.value[step.i][step.j].piece.pieceType = PieceType['PAWN'];
+      if (step.piece) {
+        const piece = currentBoard.value[step.i][step.j].piece;
+        if (piece)
+          piece.pieceType = PieceType['PAWN'];
       }
     }
 
-    
+
 
     currentLastMove.value = null;
     currentStepIndex.value--;
