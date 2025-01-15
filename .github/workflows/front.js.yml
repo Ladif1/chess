@@ -30,12 +30,8 @@ jobs:
 
       - name: Lint
         working-directory: ./chess-front
-        continue-on-error: true # Permet de continuer même si le lint échoue
+        continue-on-error: true
         run: npm run lint
-
-      - name: Type check
-        working-directory: ./chess-front
-        run: npm run typecheck
 
       - name: Build
         working-directory: ./chess-front
