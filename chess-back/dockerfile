@@ -13,6 +13,7 @@ RUN npm ci
 COPY . .
 
 # Build application
+RUN npm run generate
 RUN npm run build
 
 # Expose port
