@@ -21,10 +21,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-          cache-dependency-path: "chess-back/package-lock.json" # Ajout de cette ligne
+          cache-dependency-path: "chess-back/package-lock.json"
 
       - name: Install and build
-        working-directory: ./chess-back # Définit le répertoire de travail
+        working-directory: ./chess-back
         run: |
           npm ci
           npm run generate
