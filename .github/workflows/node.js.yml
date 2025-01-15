@@ -26,6 +26,7 @@ jobs:
       - name: Install dependencies
         working-directory: ./chess-back
         run: npm ci
+        run: npm generate
 
       - name: Lint
         working-directory: ./chess-back
