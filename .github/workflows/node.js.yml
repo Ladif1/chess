@@ -2,6 +2,7 @@ name: BACKEND CI
 
 on:
   push:
+    tags: "*"
     branches: "*"
   pull_request:
     branches: "*"

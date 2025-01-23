@@ -2,6 +2,7 @@ name: Front CI
 
 on:
   push:
+    tags: "*"
     branches: "*"
   pull_request:
     branches: "*"
